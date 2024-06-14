@@ -33,6 +33,7 @@ const riddles = [
         image: "colosseum.jpg"
     }
 ];
+let currentRiddleIndex = 0;
 
 // Get the current week number of the year
 function getWeekNumber() {
@@ -45,8 +46,9 @@ function getWeekNumber() {
 
 // Get the riddle for the current week
 function getCurrentRiddle() {
-    const weekNumber = getWeekNumber();
-    return riddles[weekNumber % riddles.length]; // Loop through riddles
+    // const weekNumber = getWeekNumber();
+    // return riddles[weekNumber % riddles.length]; // Loop through riddles
+    return currentRiddleIndex;
 }
 
 // Display the current riddle and image
@@ -58,7 +60,8 @@ function displayRiddle() {
 
 function getNextRiddle() {
     const currentRiddle = getCurrentRiddle();
-    const nextRiddle = riddles[(riddles.indexOf(currentRiddle) + 1) % riddles.length];
+    currentRiddleIndex += 1;
+    const nextRiddle = riddles[currentRiddleIndex % riddles.length];
     document.getElementById("riddle-text").textContent = nextRiddle.text;
     document.getElementById("riddle-image").src = nextRiddle.image;
 
