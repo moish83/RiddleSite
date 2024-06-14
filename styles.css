@@ -1,3 +1,4 @@
+/* Basic styles for the body and container */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -6,22 +7,39 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .container {
     text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
-#riddle-container {
+/* Card styles */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
     margin-top: 20px;
+    transition: transform 0.2s; /* Add some animation */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
 }
 
 #riddle-image {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+#riddle-text {
+    font-size: 1.2em;
 }
