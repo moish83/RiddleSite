@@ -1,32 +1,36 @@
 // Define the riddles and corresponding images
 const riddles = [
     {
-        text: "I am a city that once was the heart of an empire so vast, With ruins and relics from a glorious past. What city am I?",
-        image: "path/to/rome.jpg" // Replace with actual image path
+        text: "איפה יש כזה חלון?",
+        image: "dome.jpg"
     },
     {
-        text: "In this city, there's a fountain where you can make a wish, Throw a coin over your shoulder and hear the splash and swish. What fountain am I?",
-        image: "path/to/trevi.jpg" // Replace with actual image path
+        text: "נמתין עוד הרבה זמן?",
+        image: "plane.jpg"
     },
     {
-        text: "This city is home to a small country that's the Pope's residence, It’s the center of Catholic faith and reverence. What city am I?",
-        image: "path/to/vatican.jpg" // Replace with actual image path
+        text: "קשתות במיץ עגבניות!",
+        image: "arch.jpg"
     },
     {
-        text: "In this city, gladiators once fought in a mighty arena, A colossal structure where battles were seen-a. What city am I?",
-        image: "path/to/colosseum.jpg" // Replace with actual image path
+        text: "צבי הנינג׳ה?! מה הם קשורים לפה?!",
+        image: "tmnt.jpg"
     },
     {
-        text: "In this city, you'll find steps that are Spanish by name, Climb to the top, and you'll be glad you came. What city am I?",
-        image: "path/to/spanish_steps.jpg" // Replace with actual image path
+        text: "צב נינג׳ה כחול קשור לתמונה הזאת",
+        image: "mona_lisa.jpg"
     },
     {
-        text: "This city has a famous road, the Appian Way, Once traveled by legions, it’s historic today. What city am I?",
-        image: "path/to/appian_way.jpg" // Replace with actual image path
+        text: "נזרוק מטבע מאחורי הראש, אולי המשאלה תתגשם",
+        image: "trevi.jpg"
     },
     {
-        text: "This city is known for its art, culture, and food, A trip here will surely put you in a good mood. What city am I?",
-        image: "path/to/rome_food.jpg" // Replace with actual image path
+        text: "זאת עיר? זאת מדינה? זאת מדינה בתוך עיר!",
+        image: "vatican.jpg"
+    },
+    {
+        text: "גלדיאטורים נלחמו כאן",
+        image: "colosseum.jpg"
     }
 ];
 
@@ -52,5 +56,14 @@ function displayRiddle() {
     document.getElementById("riddle-image").src = currentRiddle.image;
 }
 
+function getNextRiddle() {
+    const currentRiddle = getCurrentRiddle();
+    const nextRiddle = riddles[(riddles.indexOf(currentRiddle) + 1) % riddles.length];
+    document.getElementById("riddle-text").textContent = nextRiddle.text;
+    document.getElementById("riddle-image").src = nextRiddle.image;
+
+}
+
 // Run the display function on page load
 window.onload = displayRiddle;
+
