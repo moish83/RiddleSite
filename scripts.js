@@ -48,7 +48,7 @@ function getWeekNumber() {
 function getCurrentRiddle() {
     // const weekNumber = getWeekNumber();
     // return riddles[weekNumber % riddles.length]; // Loop through riddles
-    return currentRiddleIndex;
+    return riddles[currentRiddleIndex];
 }
 
 // Display the current riddle and image
@@ -59,7 +59,6 @@ function displayRiddle() {
 }
 
 function getNextRiddle() {
-    const currentRiddle = getCurrentRiddle();
     currentRiddleIndex += 1;
     const nextRiddle = riddles[currentRiddleIndex % riddles.length];
     document.getElementById("riddle-text").textContent = nextRiddle.text;
