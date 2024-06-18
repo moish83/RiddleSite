@@ -9,16 +9,16 @@ const riddles = [
         image: "plane.jpg"
     },
     {
-        text: "קשתות במיץ עגבניות!",
-        image: "arch.jpg"
-    },
-    {
         text: "צבי הנינג׳ה?! מה הם קשורים לפה?!",
         image: "tmnt.jpg"
     },
     {
         text: "צב נינג׳ה כחול קשור לתמונה הזאת",
         image: "mona_lisa.jpg"
+    },
+    {
+        text: "קשתות במיץ עגבניות!",
+        image: "arch.jpg"
     },
     {
         text: "נזרוק מטבע מאחורי הראש, אולי המשאלה תתגשם",
@@ -34,26 +34,26 @@ const riddles = [
     }
 ];
 let currentRiddleIndex = 0;
+const START_DATE = new Date(2024, 5, 20);
+const THREE_DAYS_MILLIS = 3 * 24 * 60 * 60 * 1000;
 
-// Get the current week number of the year
-function getWeekNumber() {
-    const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 1);
-    const diff = now - start + (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60000;
-    const oneWeek = 604800000;
-    return Math.floor(diff / oneWeek);
-}
+function getRiddleAccordingToDate(date = new Date()) {
+    const timeMillis = date.getTime();
+    if (timeMillis < START_DATE.getTime()) {
+        return riddles[0];
+    }
 
-// Get the riddle for the current week
-function getCurrentRiddle() {
-    // const weekNumber = getWeekNumber();
-    // return riddles[weekNumber % riddles.length]; // Loop through riddles
-    return riddles[currentRiddleIndex];
+    const riddleIndex = Math.floor((timeMillis - START_DATE.getTime()) / THREE_DAYS_MILLIS);
+    if (riddleIndex >= riddles.length) {
+        return riddles[riddles.length - 1];
+    }
+
+    return riddles[riddleIndex];
 }
 
 // Display the current riddle and image
 function displayRiddle() {
-    const currentRiddle = getCurrentRiddle();
+    const currentRiddle = getRiddleAccordingToDate();
     document.getElementById("riddle-text").textContent = currentRiddle.text;
     document.getElementById("riddle-image").src = currentRiddle.image;
 }
