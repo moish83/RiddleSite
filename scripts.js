@@ -53,7 +53,7 @@ function getRiddleAccordingToDate(date = new Date()) {
 
 // Display the current riddle and image
 function displayRiddle() {
-    const currentRiddle = getRiddleAccordingToDate(new Date(2024, 5, 27));
+    const currentRiddle = getRiddleAccordingToDate();
 
     document.getElementById("riddle-text").textContent = currentRiddle.text;
     //document.getElementById("riddle-image").src = currentRiddle.image;
