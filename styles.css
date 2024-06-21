@@ -36,6 +36,22 @@ body {
     transform: scale(1.05); /* Slightly increase the size on hover */
 }
 
+.media-container {
+    position: relative;
+    max-width: 100%;
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.media-container img,
+.media-container iframe {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Ensure media has rounded corners */
+}
+
 /* Image container styles */
 .image-container {
     width: 100%;
