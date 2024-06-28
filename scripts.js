@@ -18,7 +18,7 @@ const riddles = [
     },
     {
         text: "הרכבת תגיע לפה",
-        image: "arch.jpg"
+        image: "IMG_1586.jpeg"
     },
     {
         text: "נזרוק מטבע מאחורי הראש, אולי המשאלה תתגשם",
