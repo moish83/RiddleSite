@@ -17,7 +17,7 @@ const riddles = [
         video: "https://www.youtube.com/embed/hhRBMSWpzRc?si=HZiO70YA3kQpZicp"
     },
     {
-        text: "קשתות במיץ עגבניות!",
+        text: "הרכבת תגיע לפה",
         image: "arch.jpg"
     },
     {
